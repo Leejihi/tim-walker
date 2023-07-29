@@ -1,1 +1,1 @@
-# tim-walker
+# Tim Walker
