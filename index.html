@@ -43,13 +43,15 @@
     <!-- ************상단************ -->
     <section class="header">
         <div class="nav">
-            <menu class="global-nav">
+            <menu class="global-nav flex">
                 <li class="italic"><a href="#">Home</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">About</a></li>
+                <li class="gray"><a href="#">Projects</a></li>
+                <li class="gray"><a href="#">About</a></li>
             </menu>
-            <h1>Tim<span class="margin">Walker</span></h1>
-            <ul class="sub-nav">
+
+            <h1 class="bold">Tim<span class="margin">Walker</span></h1>
+
+            <ul class="sub-nav title-mini">
                 <li>Tim Walker<span class="italic block">*gallery</span></li>
                 <li>photographer</li>
                 <li>(2023),ALL RIGHTS RESERVED</li>
@@ -58,7 +60,7 @@
 
         <div class="m-banner">
             <div class="banner-wrapper">
-                <a href="#"> <img src="./images/main-banner.gif" alt="팀워커의 사진들"></a>
+                <a href="#"><img src="./images/main-banner.gif" alt="팀워커의 사진들"></a>
             </div>
         </div>
     </section>
@@ -66,53 +68,62 @@
     <!-- ************메인************ -->
     <!-- 팀워커 키워드 -->
     <section class="m-keyword">
+        <h2 class="title-mini">hi, i am Tim Walker<br>fashion photographer & Films<br>based in Britain</h2>
 
         <div class="key-wrapper1">
-            <h2 class="title-small">hi, i am Tim Walker<br>fashion photographer & Films<br>based in Britain</h2>
-            <div class="key-box1">
-                <img src="./images/mini-img1.png" alt="팀워커의 작품사진1 빨간색 시스루 천을 덮고있는 단발머리 여자 상반신" class="mini-img1">
 
-                <img src="./images/mini-img2.png" alt="팀워커의 작품사진2 꽃위에 서있는 기묘한 생김새의 여자 전신" class="mini-img2">
+            <img class="mini-img1" src="./images/mini-img1.png" alt="팀워커의 작품사진1 빨간색 시스루 천을 덮고있는 단발머리 여자 상반신">
 
-                <img src="./images/mini-img3.png" alt="팀워커의 작품사진3 나비가 달아다니는 곳에 흰색 드레스를 입고 금발의 웨이브 머리의 소녀가 앉아있다"
-                    class="mini-img3">
-            </div>
+            <img class="mini-img2" src="./images/mini-img2.png" alt="팀워커의 작품사진2 꽃위에 서있는 기묘한 생김새의 여자 전신">
 
-            <div class="key-box2">
-                <div class="txt1">
+            <img class="mini-img3" src="./images/mini-img3.png"
+                alt="팀워커의 작품사진3 나비가 달아다니는 곳에 흰색 드레스를 입고 금발의 웨이브 머리의 소녀가 앉아있다">
+
+
+            <div class="txt-boxs">
+                <div>
                     <p>focusing</p>
                     <p>on</p>
-                    <p>fashion,<span class="small">(01)</span></p>
+                    <p class="txt1"><a href="#">fashion,<span class="small">(01)</span></a></p>
                 </div>
 
-                <div class="txt2">
-                    <p>commercial,<span class="small">(02)</span></p>
-                    <p>fantasy<span class="small">(03)</span></p>
+                <div>
+                    <p class="txt2"><a href="#">commercial,<span class="small">(02)</span></a></p>
+                    <p class="txt3"><a href="#">fantasy<span class="small">(03)</span></a></p>
                 </div>
 
-                <div class="txt3">
+                <div>
                     <p class="italic">projects</p>
                 </div>
             </div>
+
         </div>
 
         <div class="key-wrapper2">
-            <ul class="word1">
+            <ul class="flex">
                 <li>Vogue</li>
                 <li>AnOther</li>
                 <li>i-D</li>
                 <li>LOVE</li>
             </ul>
 
-            <ul class="word2">
+            <ul class="flex">
                 <li>Photographer</li>
                 <li>Art Director</li>
                 <li>Artist</li>
             </ul>
 
-            <ul class="word3">
+            <ul class="flex">
                 <li>Movie Director</li>
-                <li><a href="#" class="italic">More</a></li>
+                <li class="a-tag">
+                    <a href="#" class="italic">
+                        <svg viewBox="0 -960 960 960">
+                            <path
+                                d="m560.565-228.434-56.566-55.001 158.956-158.956H145.869v-79.218h517.086L502.999-682.13l56.566-54.436L814.696-482 560.565-228.434Z" />
+                        </svg>
+                        <p>More</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </section>
@@ -125,7 +136,7 @@
         <div class="slider slider2">
             <h2>Portraiture</h2>
         </div>
-        <div class="slider slide3">
+        <div class="slider slider3">
             <h2>Stories</h2>
         </div>
         <div class="slider slider4">
@@ -135,114 +146,151 @@
 
     <!-- 책, 영상 -->
     <section class="m-content">
-        <div class="content1">
-            <h2>Books</h2>
+        <div class="content1 flex">
+            <h2 class="book">Books</h2>
             <h2 class="number">(8)</h2>
         </div>
 
         <!-- 이미지 고정 글자 스크롤 -->
         <div class="content2">
-            <div class="txtBox">
-                <div class="title-big">photograph</div>
+            <div class="sticky">
+                <div class="imgBox">
+                    <img class="bookimg1" src="./images/books-8.png" alt="8번째 발간된 책 Wonderful Things 표지">
 
-                <div class="book-name">
-                    <p class="bold">Stern Portfolio.<span class="small">(2006)</span></p>
-                    <p class="italic">Pictures.<span class="small">(2008)</span></p>
-                    <p class="bold">The Lost Explorer.<span class="small">(2011)</span></p>
-                    <p class="italic">Story Teller.<span class="small">(2012)</span></p>
-                    <p class="bold">The Granny<br>Alphabet.<span class="small">(2013)</span></p>
-                    <p class="italic">The Garden of Earthly<br>Delights.<span class="small">(2018)</span></p>
-                    <p class="bold">Shoot for the Moon.<span class="small">(2019)</span></p>
-                    <p class="italic">Wonderful Things.<span class="small">(2019)</span></p>
+                    <img class="bookimg2" src="./images/books-3.png" alt="3번째 발간된 책 The Lost Explorer 표지">
+
+                    <img class="bookimg3" src="./images/books-6.png" alt="6번째 발간된 책 The Garden of Earthly Delights 표지">
+
+                    <img class="bookimg4" src="./images/books-7.png" alt="7번째 발간된 책 Shoot for the Moon 표지">
+
+                    <img class="bookimg5" src="./images/books-2.png" alt="2번째 발간된 책 Pictures 표지">
                 </div>
 
-                <div class="title-small">
-                    <p>Ends are always followed by beginnings.
-                        <span class="block">Something new could start right here!</span>
-                        <span class="block">there really are so many wonderful things.</span>
-                    </p>
+                <div class="txtBox">
+                    <div class="title-mini">photograph</div>
 
-                    <p>- tim walker -</p>
+                    <div class="book-name">
+                        <p class="bold">Stern Portfolio.<span class="small">(2006)</span></p>
+
+                        <p class="italic">Pictures.<span class="small">(2008)</span></p>
+
+                        <p class="bold">The Lost Explorer.<span class="small">(2011)</span></p>
+
+                        <p class="italic">Story Teller.<span class="small">(2012)</span></p>
+
+                        <p class="bold margin">The Granny</p>
+                        <p class="bold">Alphabet.<span class="small">(2013)</span></p>
+
+                        <p class="italic margin">The Garden of Earthly</p>
+                        <p class="italic">Delights.<span class="small">(2018)</span></p>
+
+                        <p class="bold">Shoot for the Moon.<span class="small">(2019)</span></p>
+
+                        <p class="italic">Wonderful Things.<span class="small">(2019)</span></p>
+                    </div>
+
+                    <div class="title-mini">
+                        <p>Ends are always followed by beginnings.
+                            <span class="block">Something new could start right here!</span>
+                            <span class="block">there really are so many wonderful things.</span>
+                        </p>
+
+                        <p>- tim walker -</p>
+                    </div>
+
                 </div>
-            </div>
-
-            <div class="imgBox">
-                <img src="./images/books-8.png" alt="8번째 발간된 책 Wonderful Things 표지" class="bookimg1">
-                <img src="./images/books-3.png" alt="3번째 발간된 책 The Lost Explorer 표지" class="bookimg2">
-                <img src="./images/books-6.png" alt="6번째 발간된 책 The Garden of Earthly Delights 표지" class="bookimg3">
-                <img src="./images/books-7.png" alt="7번째 발간된 책 Shoot for the Moon 표지" class="bookimg4">
-                <img src="./images/books-2.png" alt="2번째 발간된 책 Pictures 표지" class="bookimg5">
             </div>
         </div>
 
         <div class="content3">
             <div class="video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/nDNK5T1e4M0"
+                <iframe class="youtube"
+                    src="https://www.youtube.com/embed/nDNK5T1e4M0?controls=0&loop=1&autoplay=1&mute=1"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
+
+                <div class="video-txt">
+                    <h3>Working with Tim Walker:<span class="bold block">Models</span></h3>
+                    <p>Victoria<br>and Albert<br>Museum</p>
+                </div>
             </div>
 
-            <h3>Working with Tim Walker:<span class="bold block">Models</span></h3>
-            <p>Victoria<br>and Albert<br>Museum</p>
         </div>
     </section>
 
     <!-- ************하단************ -->
     <section class="footer">
-        <ul class="sub-nav title-big">
+        <ul class="sub-nav title-mini">
             <li>Tim Walker</li>
             <li>contact</li>
             <li>gallery</li>
         </ul>
 
         <div class="f-txtBox">
+
             <div class="ft-wrapper1">
-                <div class="ft ft1">
-                    <h3>*commercial<br>work</h3>
-                    <p>camilla lowther
-                        <br>alex pasley-tyler
-                    </p>
-                </div>
-
-                <div class="ft ft2">
-                    <h3>*gallery</h3>
-                    <p>michael hoppen
-                        <br>gallery
-                    </p>
-                </div>
-            </div>
-
-            <div class="ft-wrapper2">
                 <p class="bold">Let’s do</p>
                 <p class="bold">something</p>
                 <p class="italic">amazing</p>
                 <p class="bold">together</p>
             </div>
+
+            <div class="ft ft-wrapper2">
+                <h3>*commercial<br>work</h3>
+                <p>camilla lowther
+                    <br>alex pasley-tyler
+                </p>
+            </div>
+
+            <div class="ft ft-wrapper3">
+                <h3>*gallery</h3>
+                <p>michael hoppen
+                    <br>gallery
+                </p>
+            </div>
         </div>
 
-        <div class="title-big">
+        <div class="title-mini">
             <p>haker.jihee’s invitation to
                 <span class="block">Practical and beautiful design</span>
                 <span class="block">for you</span>
             </p>
         </div>
 
-        <div class="contact con1">
-            <p class="title-big">contact</p>
-            <h3>haker.jihee</h3>
+        <div class="contact">
+            <p class="title-mini">contact</p>
+            <div class="under flex">
+                <h3 class="line1">haker</h3>
+                <h3 class="line2">.jihee</h3>
+            </div>
         </div>
 
-        <div class="contact con2">
-            <p class="title-big">or SEND ME A MESSAGE</p>
-            <h3>haker.jihee@gmail.com</h3>
+        <div class="contact">
+            <p class="title-mini">or SEND ME A MESSAGE</p>
+            <div class="under flex">
+                <h3 class="line3">haker.</h3>
+                <h3 class="line4">jihee</h3>
+                <h3 class="line5">gmail.com</h3>
+            </div>
         </div>
 
-        <div class="upto"><a href="#">버튼</a></div>
+        <div class="upto">
+            <a href="#">
+                <svg viewBox="0 -960 960 960">
+                    <path
+                        d="M457.308-100.001v-674.846L244.693-561.846l-31.615-31.615L480-860.383l266.922 266.922-31.615 31.615-212.615-212.616v674.461h-45.384Z" />
+                </svg>
+            </a>
+        </div>
 
-        <ul class="f-info title-big">
+        <ul class="f-info title-mini">
             <li>haker.jihee</li>
-            <li><a href="#">포트폴리오 바로가기</a></li>
+            <li>
+                <a href="#"">
+                    <p>*포트폴리오 바로가기*</p>
+                </a>
+            </li>
             <li>Portfolio</li>
         </ul>
     </section>
