@@ -84,3 +84,8 @@ a {
 .w-embed.show {
   display: none;
 }
+
+/* 슬라이더 이벤트 */
+.m-slider .slider5 {
+  /* height: 0; */
+}

@@ -151,6 +151,29 @@ $(document).ready(function () {
   );
 });
 
+// ************ m-slider 작품 슬라이드 ************
+
+// 슬라이더 영역 스크롤 한만큼씩 보여지기
+/*
+$(function () {
+  const slider = document.querySelectorAll(".slider5");
+  const scrolled = (e) => {
+    e.preventDefault();
+    slider.scrollY += e.deltaY;
+  };
+
+  slider.addEventListener("wheel", scrolled);
+
+  $(".slider5").height("100vh");
+
+  //
+  $(".slider5").on("w", (e) => {
+    const target = $(e.target);
+    const wt = $(e.target).height(); // 변수에 클릭한 박스의 가로값을 가져와 대입
+    target.height(wt);
+  });
+});
+*/
 // ************ m-content 이벤트 ************
 
 // book 글자 이벤트
