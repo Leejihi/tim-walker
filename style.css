@@ -1,9 +1,8 @@
 @charset "utf-8";
 
 /* font-family: 'Montserrat', 'Noto Sans KR', sans-serif; */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&family=Noto+Sans+KR:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&family=Noto+Sans+KR:wght@400;700&display=swap");
 
-/* 변수선언 */
 /* 변수선언 */
 @import url(./variable.css);
 
@@ -14,12 +13,6 @@ body {
   background-color: var(--color-black);
   font-size: 10px;
 
-  transition: 0.5s;
-}
-
-body.active {
-  color: #000;
-  background-color: var(--color-white);
   transition: 0.5s;
 }
 
@@ -126,12 +119,25 @@ body.active {
   width: 40vw;
   height: 56vw;
   margin: 5vw auto 0;
+  overflow: hidden;
+
+  position: relative;
 }
 
-.header .m-banner .banner-wrapper img {
+.header .m-banner .banner-wrapper a {
   display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.header .m-banner .banner-wrapper .video {
   height: 56vw;
   object-fit: cover;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* --------------메인-------------- */
@@ -165,6 +171,8 @@ body.active {
   height: 9vw;
   object-fit: cover;
   border-radius: 100px;
+
+  transition: 0.3s;
 }
 
 .m-keyword .key-wrapper1 .mini-img1 {
@@ -200,6 +208,8 @@ body.active {
 
 .m-keyword .key-wrapper1 p {
   position: relative;
+
+  /* overflow: hidden; */
 }
 
 .m-keyword .key-wrapper1 .small {
@@ -214,6 +224,7 @@ body.active {
 .m-keyword .key-wrapper1 .txt3 .small {
   right: 10%;
 }
+
 /* 밑줄 */
 .m-keyword .key-wrapper1 .txt1 {
   position: relative;
@@ -224,7 +235,7 @@ body.active {
   display: block;
   width: 58%;
   height: 0.7vw;
-  background-color: #fff;
+  background-color: #000;
 
   position: absolute;
   bottom: 0;
@@ -241,7 +252,7 @@ body.active {
   display: block;
   width: 93.5%;
   height: 0.7vw;
-  background-color: #fff;
+  background-color: #000;
 
   position: absolute;
   bottom: 0;
@@ -258,7 +269,7 @@ body.active {
   display: block;
   width: 48%;
   height: 0.7vw;
-  background-color: #fff;
+  background-color: #000;
 
   position: absolute;
   bottom: 0;
@@ -285,13 +296,13 @@ body.active {
 
 .m-keyword .key-wrapper2 ul li {
   padding: 0.3vw 1.5vw;
-  border: 1px #fff solid;
+  border: 1px #000 solid;
   border-radius: 80px;
 }
 
 .m-keyword .key-wrapper2 ul .a-tag {
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
   width: 14vw;
   padding: 0;
 }
@@ -311,7 +322,7 @@ body.active {
 .m-keyword .key-wrapper2 ul .a-tag svg {
   width: 3vw;
   height: 3vw;
-  fill: #000;
+  fill: #fff;
 }
 
 /*  -- 작품 슬라이드 m-slider -- */
@@ -384,24 +395,24 @@ body.active {
   text-indent: 0.4vw;
 }
 
-.m-content .content1 .book::after {
+.m-content .content1 .book.lines::after {
   content: "";
   display: block;
   width: 102%;
   height: 3vw;
-  background-color: #fff;
+  background-color: #000;
 
   position: absolute;
   left: 1vw;
   bottom: 1.5vw;
 }
 
-.m-content .content1 .number::after {
+.m-content .content1 .number.lines::after {
   content: "";
   display: block;
   width: 40%;
   height: 3vw;
-  background-color: #fff;
+  background-color: #000;
 
   position: absolute;
   right: 7.4vw;
@@ -425,7 +436,7 @@ body.active {
 
 .m-content .content2 .imgBox {
   width: 100%;
-  height: 140vh;
+  height: 145vh;
   overflow: hidden;
 
   position: sticky;
@@ -518,7 +529,7 @@ body.active {
 
 .m-content .content3 {
   width: 100%;
-  margin-top: -13vw;
+  margin-top: -20vw;
 }
 
 .m-content .content3 .video {
@@ -589,6 +600,10 @@ body.active {
   margin: 10vw auto 22vw;
   border-top: 1px solid #fff;
   padding-top: 1vw;
+}
+
+.footer .sub-nav li:nth-child(1) {
+  text-align: left;
 }
 
 .footer .f-txtBox {
@@ -665,7 +680,7 @@ body.active {
 }
 
 .footer .contact .under h3 {
-  font-size: var(--font-vw-4);
+  font-size: var(--font-vw-3);
   font-weight: 700;
   letter-spacing: -0.1vw;
 
@@ -676,7 +691,7 @@ body.active {
   content: "";
   display: block;
   width: 101%;
-  height: 0.4vw;
+  height: 0.3vw;
   background-color: #fff;
 
   position: absolute;
@@ -688,7 +703,7 @@ body.active {
   content: "";
   display: block;
   width: 77%;
-  height: 0.4vw;
+  height: 0.3vw;
   background-color: #fff;
 
   position: absolute;
@@ -700,36 +715,36 @@ body.active {
   content: "";
   display: block;
   width: 93%;
-  height: 0.4vw;
+  height: 0.3vw;
   background-color: #fff;
 
   position: absolute;
   bottom: 0.3vw;
-  left: 0.3vw;
+  left: 0.25vw;
 }
 
 .footer .contact .under .line4::after {
   content: "";
   display: block;
-  width: 85%;
-  height: 0.4vw;
+  width: 88%;
+  height: 0.3vw;
   background-color: #fff;
 
   position: absolute;
   bottom: 0.3vw;
-  left: 1.4vw;
+  left: 1vw;
 }
 
 .footer .contact .under .line5::after {
   content: "";
   display: block;
-  width: 87%;
-  height: 0.4vw;
+  width: 72%;
+  height: 0.3vw;
   background-color: #fff;
 
   position: absolute;
   bottom: 0.3vw;
-  right: 0.2vw;
+  right: 0.15vw;
 }
 
 /* upto 버튼 */
@@ -786,4 +801,10 @@ body.active {
 .footer .f-info p {
   font-family: var(--font-family-ko);
   font-weight: 400;
+}
+
+.footer .f-info a:hover p {
+  font-style: italic;
+  color: var(--color-gray);
+  font-weight: 700;
 }

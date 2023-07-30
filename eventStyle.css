@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+/* font-family: 'Montserrat', 'Noto Sans KR', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&family=Noto+Sans+KR:wght@400;700&display=swap");
+
+/* 변수선언 */
+@import url(./variable.css);
+
+/* h1 글자 이벤트 */
+.split-lines {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.split-lines .line-mask {
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+.split-lines .line-mask .line {
+  transform-origin: top left;
+  transform: rotate(0deg);
+}
+
+/* 위치에 따른 색상변화 */
+
+body.active {
+  color: #000;
+  background-color: var(--color-white);
+  transition: 0.5s;
+}
+
+body.none-active {
+  color: #fff;
+  background-color: var(--color-black);
+  transition: 0.5s;
+}
+
+/* books 글자 위로 올라오는 이벤트 */
