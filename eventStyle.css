@@ -37,4 +37,50 @@ body.none-active {
   transition: 0.5s;
 }
 
-/* books 글자 위로 올라오는 이벤트 */
+/* 마우스 커서 스타일 */
+
+body,
+a {
+  cursor: none;
+}
+
+.cursor-dot {
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+  font-size: var(--font-size-10);
+  border-radius: 120px;
+  width: 6vw;
+  height: 7vw;
+  text-align: center;
+  line-height: 7vw;
+  text-transform: uppercase;
+  font-weight: 700;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  mix-blend-mode: difference;
+
+  display: none;
+}
+
+.cursor-dot.show {
+  display: block;
+}
+
+.w-embed {
+  width: 1vw;
+  height: 1vw;
+  background-color: var(--color-white);
+  border-radius: 50%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  mix-blend-mode: difference;
+}
+
+.w-embed.show {
+  display: none;
+}

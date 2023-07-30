@@ -37,34 +37,19 @@
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
-    <script src="https://unpkg.com/split-type"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
-
-
-
-
     <!-- 내가 작성한 js -->
     <script defer src="./script.js"></script>
 </head>
 
 <body>
-    <!-- 마우스 커서 -->
-    <!-- <div class="cursor-wrapper">
-        <div class="cursor-dot">
-            <p class="caption center white cursor">watch</p>
-        </div>
-        <div id="top" class="w-embed">
-        </div>
-    </div>
-     -->
 
     <!-- ************상단************ -->
     <section class="header">
         <div class="nav">
             <menu class="global-nav flex">
                 <li class="italic"><a href="#">Home</a></li>
-                <li class="gray"><a href="#">Projects</a></li>
-                <li class="gray"><a href="#">About</a></li>
+                <li class="gray"><a href="#" class="link">Projects</a></li>
+                <li class="gray"><a href="#" class="link">About</a></li>
             </menu>
 
 
@@ -79,7 +64,7 @@
         </div>
 
         <div class="m-banner">
-            <div class="banner-wrapper">
+            <div class="banner-wrapper cursor-change">
                 <a href="#">
                     <video src="./images/main-banner.mp4" muted autoplay loop poster="./images/main-banner.gif"
                         class="video" id="mov01">
@@ -108,12 +93,12 @@
                 <div class="p1">
                     <p>focusing</p>
                     <p>on</p>
-                    <p class="txt1"><a href="#">fashion,<span class="small">(01)</span></a></p>
+                    <p class="txt1"><a href="#" class="link">fashion,<span class="small">(01)</span></a></p>
                 </div>
 
                 <div class="p1">
-                    <p class="txt2"><a href="#">commercial,<span class="small">(02)</span></a></p>
-                    <p class="txt3"><a href="#">fantasy<span class="small">(03)</span></a></p>
+                    <p class="txt2"><a href="#" class="link">commercial,<span class="small">(02)</span></a></p>
+                    <p class="txt3"><a href="#" class="link">fantasy<span class="small">(03)</span></a></p>
                 </div>
 
                 <div class="p1">
@@ -140,7 +125,7 @@
             <ul class="flex">
                 <li>Movie Director</li>
                 <li class="a-tag">
-                    <a href="#" class="italic">
+                    <a href="#" class="italic link">
                         <svg viewBox="0 -960 960 960">
                             <path
                                 d="m560.565-228.434-56.566-55.001 158.956-158.956H145.869v-79.218h517.086L502.999-682.13l56.566-54.436L814.696-482 560.565-228.434Z" />
@@ -153,7 +138,7 @@
     </section>
 
     <!-- 작품 슬라이드 -->
-    <section class="m-slider">
+    <section class="m-slider cursor-change">
         <div class="slider slider1">
             <h2>Selected Work</h2>
         </div>
@@ -171,12 +156,10 @@
     <!-- 책, 영상 -->
     <section class="m-content">
 
-        <div class="content1 flex">
+        <div class="content1 flex link">
             <h2 class="book">Books</h2>
             <h2 class="number">(8)</h2>
         </div>
-
-
 
         <!-- 이미지 고정 글자 스크롤 -->
         <div class="content2">
@@ -289,7 +272,7 @@
 
         <div class="contact">
             <p class="title-mini">contact</p>
-            <div class="under flex">
+            <div class="under flex link">
                 <h3 class="line1">haker</h3>
                 <h3 class="line2">.jihee</h3>
             </div>
@@ -297,7 +280,7 @@
 
         <div class="contact">
             <p class="title-mini">or SEND ME A MESSAGE</p>
-            <div class="under flex">
+            <div class="under flex link">
                 <h3 class="line3">haker.</h3>
                 <h3 class="line4">jihee</h3>
                 <h3 class="line5">@gmail.com</h3>
@@ -305,7 +288,7 @@
         </div>
 
         <div class="upto">
-            <a href="#">
+            <a href="#" class="link">
                 <svg viewBox="0 -960 960 960">
                     <path
                         d="M457.308-100.001v-674.846L244.693-561.846l-31.615-31.615L480-860.383l266.922 266.922-31.615 31.615-212.615-212.616v674.461h-45.384Z" />
@@ -316,13 +299,19 @@
         <ul class="f-info title-mini">
             <li>haker.jihee</li>
             <li>
-                <a href="#"">
+                <a href="#" class="link">
                     <p>*포트폴리오 바로가기*</p>
                 </a>
             </li>
             <li>Portfolio</li>
         </ul>
     </section>
+
+    <!-- 마우스 커서 -->
+
+    <div class=" cursor-dot">watch</div>
+    <div id="top" class="w-embed"></div>
+
 
 </body>
 

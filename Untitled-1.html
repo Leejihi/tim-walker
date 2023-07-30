@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>title</title>
+
     <!-- reset -->
     <link rel="stylesheet" href="./common/reset.css">
 
@@ -16,7 +16,63 @@
     <link rel="stylesheet" href="./eventStyle.css">
 
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&family=Noto+Sans+KR:wght@400;700&display=swap");
+        body {
+            font-family: var(--font-family-en);
+            color: #fff;
+            background-color: var(--color-black);
+            font-size: 10px;
+
+            transition: 0.5s;
+
+            cursor: none;
+        }
+
+        a {
+            cursor: none;
+        }
+
+        .italic {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .title-mini {
+            font-size: var(--font-size-10);
+            line-height: 1.6;
+            text-transform: uppercase;
+        }
+
+        .bold {
+            font-weight: 700;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .sub-nav {
+            font-weight: 500;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            margin-top: 1.2vw;
+        }
+
+        .sub-nav li:nth-child(2) {
+            justify-self: center;
+        }
+
+        .sub-nav li:nth-child(3) {
+            justify-self: end;
+        }
+
+        /* --------------마우스커서-------------- */
+
         /* --------------상단 header-------------- */
         /* 상단 nav */
 
@@ -38,6 +94,12 @@
             justify-content: space-between;
 
             margin-bottom: 0.5vw;
+        }
+
+        .header .nav .global-nav a {
+            display: block;
+            width: 100%;
+            height: 100%;
         }
 
         .header .nav .global-nav .gray {
@@ -99,225 +161,49 @@
             transform: translate(-50%, -50%);
         }
 
-        /* --------------메인-------------- */
-        /*  -- 팀워커 키워드 m-keyword -- */
+        /* 마우스 커서 스타일 */
 
-        .m-keyword {
-            width: 100%;
-            text-align: center;
-            padding-top: 12vw;
+        .cursor-dot {
+            border: 1px solid var(--color-white);
+            color: var(--color-white);
+            font-size: var(--font-size-10);
+            border-radius: 120px;
+            width: 5vw;
+            height: 6vw;
+
+            margin: 10vw auto;
+
+            display: grid;
+            place-content: center;
+
+            display: none;
+
+            position: fixed;
+            top: -1000px;
+            left: 1000px;
+            mix-blend-mode: difference;
         }
 
-        .m-keyword h2 {
-            margin-bottom: 4vw;
-        }
+        .w-embed {
+            width: 1vw;
+            height: 1vw;
+            background-color: var(--color-white);
+            border-radius: 50%;
 
-        /* 이미지와 큰 글씨 */
-
-        .m-keyword .key-wrapper1 {
-            width: 100%;
-            height: 65vw;
-            font-size: var(--font-vw-10);
-            letter-spacing: -0.65vw;
-            font-weight: 700;
-            line-height: var(--font-vw-10);
-
-            position: relative;
-        }
-
-        .m-keyword .key-wrapper1 img {
-            width: 7vw;
-            height: 9vw;
-            object-fit: cover;
-            border-radius: 100px;
-
-            transition: 0.3s;
-        }
-
-        .m-keyword .key-wrapper1 .mini-img1 {
-            position: absolute;
-            top: 17vw;
-            left: 37%;
-
-            z-index: 99;
-        }
-
-        .m-keyword .key-wrapper1 .mini-img2 {
-            position: absolute;
-            top: 36vw;
-            right: 29%;
-
-            z-index: 99;
-        }
-
-        .m-keyword .key-wrapper1 .mini-img3 {
-            position: absolute;
-            top: 47.5vw;
-            left: 36%;
-
-            z-index: 99;
-        }
-
-        .m-keyword .key-wrapper1 .txt-boxs {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .m-keyword .key-wrapper1 p {
-            position: relative;
-
-            /* overflow: hidden; */
-        }
-
-        .m-keyword .key-wrapper1 .small {
-            font-weight: 400;
-            font-size: var(--font-size-13);
-            letter-spacing: 0;
-
-            position: absolute;
-            top: -12.5%;
-        }
-
-        .m-keyword .key-wrapper1 .txt3 .small {
-            right: 10%;
-        }
-
-        /* 밑줄 */
-        .m-keyword .key-wrapper1 .txt1 {
-            position: relative;
-        }
-
-        .m-keyword .key-wrapper1 .txt1::after {
-            content: "";
-            display: block;
-            width: 58%;
-            height: 0.7vw;
-            background-color: #000;
-
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-51.5%);
-        }
-
-        .m-keyword .key-wrapper1 .txt2 {
-            position: relative;
-        }
-
-        .m-keyword .key-wrapper1 .txt2::after {
-            content: "";
-            display: block;
-            width: 93.5%;
-            height: 0.7vw;
-            background-color: #000;
-
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .m-keyword .key-wrapper1 .txt3 {
-            position: relative;
-        }
-
-        .m-keyword .key-wrapper1 .txt3::after {
-            content: "";
-            display: block;
-            width: 48%;
-            height: 0.7vw;
-            background-color: #000;
-
-            position: absolute;
-            bottom: 0;
-            left: 21.5%;
-        }
-
-        /* key-wrapper2 */
-
-        .m-keyword .key-wrapper2 {
-            width: 100%;
-            font-size: var(--font-vw-3);
-            letter-spacing: -0.2vw;
-            font-weight: 500;
-        }
-
-        .m-keyword .key-wrapper2>.flex {
-            justify-content: center;
-            gap: 0.6vw;
-        }
-
-        .m-keyword .key-wrapper2 ul {
-            margin-bottom: 0.8vw;
-        }
-
-        .m-keyword .key-wrapper2 ul li {
-            padding: 0.3vw 1.5vw;
-            border: 1px #000 solid;
-            border-radius: 80px;
-        }
-
-        .m-keyword .key-wrapper2 ul .a-tag {
-            background-color: #000;
-            color: #fff;
-            width: 14vw;
-            padding: 0;
-        }
-
-        .m-keyword .key-wrapper2 ul .a-tag a {
-            width: 100%;
-            height: 100%;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5vw;
-
-            font-weight: 500;
-        }
-
-        .m-keyword .key-wrapper2 ul .a-tag svg {
-            width: 3vw;
-            height: 3vw;
-            fill: #fff;
-        }
-
-        /* h1 글자 이벤트 */
-        .split-lines {
-            position: relative;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        }
-
-        .split-lines .line-mask {
-            overflow: hidden;
-            position: relative;
-            display: block;
-        }
-
-        .split-lines .line-mask .line {
-            transform-origin: top left;
-            transform: rotate(0deg);
+            position: fixed;
+            top: -1000px;
+            left: 1000px;
+            mix-blend-mode: difference;
         }
     </style>
 
     <!-- js -->
     <script src="./common/jquery-3.7.0.min.js"></script>
-
-    <!-- 글자이벤트 js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/split-type"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-
-    <script src="https://unpkg.com/split-type"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
-
-
 </head>
 
 <body>
+
+    <!-- ************상단************ -->
     <section class="header">
         <div class="nav">
             <menu class="global-nav flex">
@@ -347,139 +233,14 @@
             </div>
         </div>
     </section>
+    <!-- 마우스 -->
 
-    <!-- ************메인************ -->
-    <!-- 팀워커 키워드 -->
-    <section class="m-keyword">
-        <h2 class="title-mini">hi, i am Tim Walker<br>fashion photographer & Films<br>based in Britain</h2>
+    <div class="cursor-dot">watch</div>
+    <div id="top" class="w-embed"></div>
 
-        <div class="key-wrapper1" id="key-wrapper1">
+    <script>
 
-            <img class="mini-img1 p1" data-scrolltrigger="p1" src="./images/mini-img1.png"
-                alt="팀워커의 작품사진1 빨간색 시스루 천을 덮고있는 단발머리 여자 상반신">
-
-            <img class="mini-img2 p2" src="./images/mini-img2.png" alt="팀워커의 작품사진2 꽃위에 서있는 기묘한 생김새의 여자 전신">
-
-            <img class="mini-img3 p3" src="./images/mini-img3.png"
-                alt="팀워커의 작품사진3 나비가 달아다니는 곳에 흰색 드레스를 입고 금발의 웨이브 머리의 소녀가 앉아있다">
-
-
-            <div class="txt-boxs">
-                <div class="p1">
-                    <p>focusing</p>
-                    <p>on</p>
-                    <p class="txt1"><a href="#">fashion,<span class="small">(01)</span></a></p>
-                </div>
-
-                <div class="p2">
-                    <p class="txt2"><a href="#">commercial,<span class="small">(02)</span></a></p>
-                    <p class="txt3"><a href="#">fantasy<span class="small">(03)</span></a></p>
-                </div>
-
-                <div class="p3">
-                    <p class="italic">projects</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="key-wrapper2">
-            <ul class="flex">
-                <li>Vogue</li>
-                <li>AnOther</li>
-                <li>i-D</li>
-                <li>LOVE</li>
-            </ul>
-
-            <ul class="flex">
-                <li>Photographer</li>
-                <li>Art Director</li>
-                <li>Artist</li>
-            </ul>
-
-            <ul class="flex">
-                <li>Movie Director</li>
-                <li class="a-tag">
-                    <a href="#" class="italic">
-                        <svg viewBox="0 -960 960 960">
-                            <path
-                                d="m560.565-228.434-56.566-55.001 158.956-158.956H145.869v-79.218h517.086L502.999-682.13l56.566-54.436L814.696-482 560.565-228.434Z" />
-                        </svg>
-                        <p>More</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-
-
+    </script>
 </body>
-
-<script>
-    // h1 글자 하단에서 등장
-
-    let typeSplit;
-
-    function runSplit() {
-        typeSplit = new SplitType(".split-lines", {
-            types: "lines",
-            tagName: "span",
-        });
-        $(".split-lines .line").wrap("<span class='line-mask'></span>");
-        $(".split-lines").css("opacity", "1");
-    }
-
-    // Update on window resize
-    let windowWidth = $(window).innerWidth();
-    window.addEventListener("resize", function () {
-        if (windowWidth !== $(window).innerWidth()) {
-            windowWidth = $(window).innerWidth();
-            typeSplit.revert();
-            runSplit();
-        }
-    });
-
-    runSplit();
-
-    let tl = gsap.timeline({ defaults: { ease: "power3.easeOut", duration: 0.7 } });
-
-    tl.from(" .split-lines .line", {
-        yPercent: 100,
-        rotation: 7,
-        stagger: 0.1,
-    });
-
-    // 추가
-    ScrollTrigger.create({
-        trigger: "#key-wrapper1", // The element that triggers the animation
-        start: "top 80%", // The start point of the animation relative to the trigger's top edge
-        end: "top 20%", // The end point of the animation relative to the trigger's top edge
-        onEnter: function () {
-            tl.from(".p1 .line", {
-                yPercent: 100,
-                rotation: 7,
-                stagger: 0.1,
-            });
-        },
-        onEnterBack: function () {
-            tl.from(".p1 .line", {
-                yPercent: -100,
-                rotation: -7,
-                stagger: 0.1,
-            });
-        },
-        onLeave: function () {
-            tl.reversed(true);
-        },
-        onLeaveBack: function () {
-            tl.reversed(true);
-        },
-        onEnterBack: function () {
-            tl.reversed(false);
-        },
-    });
-
-</script>
 
 </html>

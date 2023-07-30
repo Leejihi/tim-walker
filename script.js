@@ -1,5 +1,81 @@
-// ************ 상단 글자이벤트 ************
+// ************ 전체영역이벤트 ************
+// 스크롤시 배경색상 변화
 
+// 변경1
+$(window).on("scroll", () => {
+  const slideBox = $(".m-banner").offset().top + 100;
+
+  if (scrollY > slideBox) {
+    $("body").addClass("active");
+  } else {
+    $("body").removeClass("active");
+  }
+});
+
+// 변경2
+$(window).on("scroll", () => {
+  const slideBox = $(".change").offset().top;
+
+  if (scrollY > slideBox) {
+    $("body").addClass("none-active");
+  } else {
+    $("body").removeClass("none-active");
+  }
+});
+
+// 버튼클릭시 부드러운 이동
+$(".upto").click(function () {
+  $("html, body").animate({ scrollTop: 0 }, 500);
+  return false;
+});
+
+// 마우스 커서 이벤트
+
+const cursor = document.querySelector(".w-embed");
+const body = document.querySelector("body");
+const cursorDot = document.querySelector(".cursor-dot");
+
+// body 요소에 "mousemove" 이벤트를 등록합니다.
+body.addEventListener("mousemove", (event) => {
+  cursor.style.left = event.clientX + "px";
+  cursor.style.top = event.clientY + "px";
+});
+
+body.addEventListener("mousemove", (event) => {
+  // .cursor-dot 요소를 마우스 커서의 위치로 이동시킵니다.
+  cursorDot.style.left = event.clientX + "px";
+  cursorDot.style.top = event.clientY + "px";
+});
+
+// a태그 위에 마우스 올라가면 사이즈 변경
+$(document).ready(function () {
+  $(".link").mouseover(function () {
+    $(".w-embed").css("width", "4vw").css("height", "4vw");
+  });
+
+  $(".link").mouseout(function () {
+    $(".w-embed").css("width", "1vw").css("height", "1vw");
+  });
+});
+
+// 지정된 위치에 올라가면 마우스 커서 변경
+$(document).ready(function () {
+  $(".cursor-change").mouseover(function () {
+    $(".w-embed").addClass("show");
+    $(".cursor-dot").addClass("show");
+  });
+
+  $(".cursor-change").mouseout(function () {
+    $(".w-embed").removeClass("show");
+    $(".cursor-dot").removeClass("show");
+  });
+});
+
+// //////////////전체영역 이벤트 끝///////////////// //
+
+// //////////////개별영역 이벤트 시작///////////////// //
+
+// ************ 상단 글자이벤트 ************
 // h1 글자 하단에서 등장
 
 let typeSplit;
@@ -33,29 +109,7 @@ tl.from(" .split-lines .line", {
   stagger: 0.1,
 });
 
-// 스크롤시 배경색상 변화
-// 변경1
-$(window).on("scroll", () => {
-  const slideBox = $(".m-banner").offset().top + 100;
-
-  if (scrollY > slideBox) {
-    $("body").addClass("active");
-  } else {
-    $("body").removeClass("active");
-  }
-});
-
-// 변경2
-$(window).on("scroll", () => {
-  const slideBox = $(".change").offset().top;
-
-  if (scrollY > slideBox) {
-    $("body").addClass("none-active");
-  } else {
-    $("body").removeClass("none-active");
-  }
-});
-
+// ************ video영역 ************
 // 스크롤시 메인배너 확대, 축소 이벤트
 
 $(window).scroll(function () {
@@ -65,8 +119,8 @@ $(window).scroll(function () {
   });
 });
 
-// ************ 글자이벤트 끝 ************
-// key-wrapper1 영역 글자 호버시 사진 이미지 커지기
+// ************ key-wrapper1 이벤트 ************
+//  영역 글자 호버시 사진 이미지 커지기
 
 $(document).ready(function () {
   $(".txt1").hover(
@@ -148,3 +202,5 @@ $(document).ready(function () {
   // Call the function to set up the animation
   animateImageChange();
 });
+
+// 글자이벤트
