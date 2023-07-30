@@ -336,7 +336,8 @@ body {
   width: 100%;
   height: 100vh;
 
-  position: relative;
+  position: sticky;
+  top: 0;
 }
 
 .m-slider .slider h2 {

@@ -3,157 +3,43 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>title</title>
-
     <!-- reset -->
     <link rel="stylesheet" href="./common/reset.css">
 
     <!-- pc 우선 css-->
     <link rel="stylesheet" href="./style.css">
-
-    <!-- 이벤트 css -->
-    <link rel="stylesheet" href="./eventStyle.css">
-
     <style>
-        body {
-            font-family: var(--font-family-en);
-            color: #fff;
-            background-color: var(--color-black);
-            font-size: 10px;
+        /*  -- 작품 슬라이드 m-slider -- */
 
-            transition: 0.5s;
-
-            cursor: none;
-        }
-
-        a {
-            cursor: none;
-        }
-
-        .italic {
-            font-style: italic;
-            font-weight: 400;
-        }
-
-        .block {
-            display: block;
-        }
-
-        .title-mini {
-            font-size: var(--font-size-10);
-            line-height: 1.6;
-            text-transform: uppercase;
-        }
-
-        .bold {
-            font-weight: 700;
-        }
-
-        .flex {
-            display: flex;
-        }
-
-        .sub-nav {
-            font-weight: 500;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            margin-top: 1.2vw;
-        }
-
-        .sub-nav li:nth-child(2) {
-            justify-self: center;
-        }
-
-        .sub-nav li:nth-child(3) {
-            justify-self: end;
-        }
-
-        /* --------------마우스커서-------------- */
-
-        /* --------------상단 header-------------- */
-        /* 상단 nav */
-
-        .header {
+        .m-slider {
             width: 100%;
-        }
-
-        .header .nav {
-            width: 97%;
-            margin: 0 auto;
-        }
-
-        .header .nav .global-nav {
-            width: 100%;
-            font-size: var(--font-vw-4);
-            letter-spacing: -0.2vw;
-            font-weight: 500;
-
-            justify-content: space-between;
-
-            margin-bottom: 0.5vw;
-        }
-
-        .header .nav .global-nav a {
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-
-        .header .nav .global-nav .gray {
-            color: var(--color-gray);
-        }
-
-        .header .nav .global-nav .gray :hover {
-            color: #fff;
-            font-style: italic;
-        }
-
-        .header .nav h1 {
-            width: 100%;
-            height: 17vw;
-
-            font-size: 17.5vw;
-            letter-spacing: -0.5vw;
-            line-height: 17vw;
-            text-align: center;
-
-            border-top: #fff solid 1px;
-            border-bottom: #fff solid 1px;
-        }
-
-        /* .sub-nav 공통은 상단에 기재되어 있음 */
-
-        .header .nav .sub-nav .italic {
-            font-weight: 700;
-        }
-
-        /* 상단 배너 */
-
-        .header .m-banner {
-            width: 100%;
-        }
-
-        .header .m-banner .banner-wrapper {
-            width: 40vw;
-            height: 56vw;
-            margin: 5vw auto 0;
-            overflow: hidden;
-
+            margin-top: 15vw;
+            /* height: 100vh; */
+            /* overflow: hidden; */
             position: relative;
+            left: 0;
+            perspective: 100vh;
+            transition: top 0.5s;
         }
 
-        .header .m-banner .banner-wrapper a {
-            display: block;
+        .m-slider .slider {
             width: 100%;
-            height: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+
+
         }
 
-        .header .m-banner .banner-wrapper .video {
-            height: 56vw;
-            object-fit: cover;
+        .m-slider .slider h2 {
+            text-align: center;
+            color: #fff;
+            font-size: var(--font-vw-5);
+            font-weight: 700;
+            letter-spacing: -0.2vw;
 
             position: absolute;
             top: 50%;
@@ -161,85 +47,57 @@
             transform: translate(-50%, -50%);
         }
 
-        /* 마우스 커서 스타일 */
-
-        .cursor-dot {
-            border: 1px solid var(--color-white);
-            color: var(--color-white);
-            font-size: var(--font-size-10);
-            border-radius: 120px;
-            width: 5vw;
-            height: 6vw;
-
-            margin: 10vw auto;
-
-            display: grid;
-            place-content: center;
-
-            display: none;
-
-            position: fixed;
-            top: -1000px;
-            left: 1000px;
-            mix-blend-mode: difference;
+        .m-slider .slider1 {
+            background: url(./images/bg-img1.png) no-repeat 50% 40% / cover;
         }
 
-        .w-embed {
-            width: 1vw;
-            height: 1vw;
-            background-color: var(--color-white);
-            border-radius: 50%;
+        .m-slider .slider2 {
+            background-image: url(./images/bg-img2.png) no-repeat 50% 40% / cover;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: scale3d(1, 0, 1);
+            transition: transform 0.5s;
+        }
 
-            position: fixed;
-            top: -1000px;
-            left: 1000px;
-            mix-blend-mode: difference;
+        .show-slider2 .slider1 {
+            transform: scale3d(1, 1, 1);
         }
     </style>
 
-    <!-- js -->
-    <script src="./common/jquery-3.7.0.min.js"></script>
+    <script src="../common/jquery-3.7.0.min.js"></script>
 </head>
 
 <body>
-
-    <!-- ************상단************ -->
-    <section class="header">
-        <div class="nav">
-            <menu class="global-nav flex">
-                <li class="italic"><a href="#">Home</a></li>
-                <li class="gray"><a href="#">Projects</a></li>
-                <li class="gray"><a href="#">About</a></li>
-            </menu>
-
-
-            <h1 class="bold split-lines">Tim<span class="margin">Walker</span></h1>
-
-
-            <ul class="sub-nav title-mini">
-                <li>Tim Walker<span class="italic block">*gallery</span></li>
-                <li>photographer</li>
-                <li>(2023),ALL RIGHTS RESERVED</li>
-            </ul>
+    <section class="m-slider cursor-change" id="slider-container">
+        <div class="slider slider1">
+            <h2>Selected Work</h2>
         </div>
-
-        <div class="m-banner">
-            <div class="banner-wrapper">
-                <a href="#">
-                    <video src="./images/main-banner.mp4" muted autoplay loop poster="./images/main-banner.gif"
-                        class="video" id="mov01">
-                    </video>
-                </a>
-            </div>
+        <div class="slider slider2">
+            <h2>Portraiture</h2>
         </div>
     </section>
-    <!-- 마우스 -->
-
-    <div class="cursor-dot">watch</div>
-    <div id="top" class="w-embed"></div>
 
     <script>
+        const sliderContainer = document.getElementById('slider-container');
+        const slider1 = document.querySelector('.slider1');
+        const slider2 = document.querySelector('.slider2');
+        const sliderHeight = sliderContainer.clientHeight;
+        const scrollStep = sliderHeight / 3;
+        let scrollCount = 0;
 
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+
+            if (scrollCount < 3) {
+                const translateY = (scrollY / sliderHeight) * scrollStep;
+                slider2.style.transform = `scale3d(1, ${1 + translateY}, 1) translateY(-${translateY * sliderHeight}px)`;
+                scrollCount++;
+            }
+
+            if (scrollY >= sliderHeight && !sliderContainer.classList.contains('show-slider2')) {
+                sliderContainer.classList.add('show-slider2');
+            }
+        });
     </script>
 </body>
 
