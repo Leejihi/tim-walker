@@ -200,29 +200,30 @@ body {
 
 .m-keyword .key-wrapper1 .mini-img1 {
   position: absolute;
-  top: 17vw;
-  left: 37%;
+  top: 18vw;
+  left: 36vw;
 
   z-index: 99;
 }
 
 .m-keyword .key-wrapper1 .mini-img2 {
   position: absolute;
-  top: 36vw;
-  right: 29%;
+  top: 40vw;
+  right: 31.5vw;
 
   z-index: 99;
 }
 
 .m-keyword .key-wrapper1 .mini-img3 {
   position: absolute;
-  top: 47.5vw;
-  left: 36%;
+  top: 50vw;
+  left: 36vw;
 
   z-index: 99;
 }
 
 .m-keyword .key-wrapper1 .txt-boxs {
+  width: 100%;
   position: absolute;
   top: 0;
   left: 50%;
@@ -230,6 +231,11 @@ body {
 }
 
 .m-keyword .key-wrapper1 p {
+  height: 11vw;
+  line-height: -15vw;
+}
+
+.m-keyword .key-wrapper1 .txt1 {
   position: relative;
 }
 
@@ -237,23 +243,33 @@ body {
   font-weight: 400;
   font-size: var(--font-size-13);
   letter-spacing: 0;
+  line-height: 10vw;
+  margin-bottom: 8vw;
 
   position: absolute;
-  top: -12.5%;
+  top: -4.6vw;
+}
+
+.m-keyword .key-wrapper1 .txt1 .small {
+  right: 1vw;
+}
+
+.m-keyword .key-wrapper1 .txt2 .small {
+  right: 1vw;
 }
 
 .m-keyword .key-wrapper1 .txt3 .small {
-  right: 10%;
+  right: -2vw;
 }
 
-/* 밑줄 
-.m-keyword .key-wrapper1 .link{
+/* 밑줄  */
+.m-keyword .key-wrapper1 .link {
   display: block;
   width: 100%;
   text-decoration: underline;
-}*/
+}
 
-/* 밑줄 */
+/* 밑줄 
 .m-keyword .key-wrapper1 .txt1 {
   position: relative;
 }
@@ -303,6 +319,7 @@ body {
   bottom: 0;
   left: 21.5%;
 }
+*/
 
 /* key-wrapper2 */
 
@@ -311,6 +328,7 @@ body {
   font-size: var(--font-vw-3);
   letter-spacing: -0.2vw;
   font-weight: 500;
+  margin-top: 10vw;
 }
 
 .m-keyword .key-wrapper2 > .flex {

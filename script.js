@@ -272,17 +272,115 @@ document.addEventListener("DOMContentLoaded", function () {
   // '.split-area3'에 도착했을 때
   ScrollTrigger.create({
     trigger: ".split-area3",
-    start: "top",
+    start: "top 90%",
     onEnter: () => {
       tl.restart();
     },
     once: true,
   });
+});
 
-  // '.footer'에 도착했을 때
+// 'key-wrapper1 영역 글자 이벤트
+// DOMContentLoaded 이벤트로 스크립트 실행
+document.addEventListener("DOMContentLoaded", function () {
+  let typeSplit;
+
+  function runSplit() {
+    typeSplit = new SplitType(".split-lines-k", {
+      types: "lines",
+      tagName: "span",
+    });
+    $(".split-lines-k .line").wrap("<span class='line-mask'></span>");
+    $(".split-lines-k").css("opacity", "1");
+  }
+  // Update on window resize
+  let windowWidth = $(window).innerWidth();
+  window.addEventListener("resize", function () {
+    if (windowWidth !== $(window).innerWidth()) {
+      windowWidth = $(window).innerWidth();
+      typeSplit.revert();
+      runSplit();
+    }
+  });
+
+  runSplit();
+
+  let tl = gsap.timeline({
+    defaults: { ease: "power3.easeOut", duration: 0.7 },
+  });
+
+  tl.from(
+    " .split-lines-k .line",
+    0.5,
+    {
+      yPercent: 100,
+      rotation: 7,
+      duration: 0.7,
+      stagger: 0.1,
+      ease: "power3.easeOut",
+    },
+    0.5
+  );
+
+  gsap.registerPlugin(ScrollTrigger);
+
   ScrollTrigger.create({
-    trigger: "footer",
-    start: "top - 60vh",
+    trigger: ".key-wrapper1",
+    start: "top 70%",
+    onEnter: () => {
+      tl.restart();
+    },
+    once: true,
+  });
+});
+
+// '.footer'에 도착했을 때
+// DOMContentLoaded 이벤트로 스크립트 실행
+document.addEventListener("DOMContentLoaded", function () {
+  let typeSplit;
+
+  function runSplit() {
+    typeSplit = new SplitType(".split-lines-f", {
+      types: "lines",
+      tagName: "span",
+    });
+    $(".split-lines-f .line").wrap("<span class='line-mask'></span>");
+    $(".split-lines-f").css("opacity", "1");
+  }
+  // Update on window resize
+  let windowWidth = $(window).innerWidth();
+  window.addEventListener("resize", function () {
+    if (windowWidth !== $(window).innerWidth()) {
+      windowWidth = $(window).innerWidth();
+      typeSplit.revert();
+      runSplit();
+    }
+  });
+
+  runSplit();
+
+  let tl = gsap.timeline({
+    defaults: { ease: "power3.easeOut", duration: 0.7 },
+  });
+
+  tl.from(
+    " .split-lines-f .line",
+    0.5,
+    {
+      yPercent: 100,
+      rotation: 7,
+      duration: 0.7,
+      stagger: 0.1,
+      ease: "power3.easeOut",
+    },
+    0.5
+  );
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  ScrollTrigger.create({
+    trigger: ".footer",
+    start: "top 70%",
     onEnter: () => {
       tl.restart();
     },

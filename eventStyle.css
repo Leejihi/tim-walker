@@ -91,3 +91,37 @@ a {
 }
 
 /* 책과 제목 글자 이벤트 */
+
+/* key-wrapper1 영역 글자 이벤트 */
+.split-lines-k {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.split-lines-k .line-mask {
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+.split-lines-k .line-mask .line {
+  transform-origin: top left;
+  transform: rotate(0deg);
+}
+
+/* footer 영역 글자 이벤트 */
+.split-lines-f {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.split-lines-f .line-mask {
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+.split-lines-f .line-mask .line {
+  transform-origin: top left;
+  transform: rotate(0deg);
+}
