@@ -5,203 +5,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>title</title>
+    <title>슬라이더</title>
     <!-- reset -->
     <link rel="stylesheet" href="./common/reset.css">
 
-    <!-- pc 우선 css-->
-    <!-- <link rel="stylesheet" href="./style.css"> -->
+
+
+    <!-- 내가 작성 -->
     <style>
-        /* 공통값 */
-        body {
-            font-family: var(--font-family-en);
-            color: #000;
-            font-size: 10px;
-
-            transition: 0.5s;
-            background-color: var(--color-white);
-        }
-
-        .flex {
-            display: flex;
-        }
-
-        /* 글자 이벤트 */
-        .split-lines {
-            position: relative;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        }
-
-        .split-lines .line-mask {
-            overflow: hidden;
-            position: relative;
-            display: block;
-        }
-
-        .split-lines .line-mask .line {
-            transform-origin: top left;
-            transform: rotate(0deg);
-        }
-
-        /* footer */
-        .m-content {
+        .m-slider {
             width: 100%;
+            height: 400vh;
+            margin-top: 20vw;
+
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+
+            background-color: black;
+
+            /* position: relative; */
+        }
+
+        .m-slider .sticky-box {
+            width: 100%;
+            height: 100vh;
+
+            position: sticky;
+            top: 0;
+
+
+            z-index: 9999;
+        }
+
+        /* 텍스트 */
+        .m-slider .slider-txt {
+            width: 100%;
+            height: 400vh;
+            position: relative;
+            z-index: 999;
+        }
+
+        .m-slider .slider-txt h2 {
+            width: 100%;
+            height: 100vh;
             text-align: center;
-        }
-
-        .m-content .content1 {
-            width: 100%;
-            justify-content: center;
-
-            margin-bottom: 12vw;
-        }
-
-        .m-content .content1 h2 {
-            font-size: 23.4vw;
+            color: #fff;
+            font-size: 5vw;
             font-weight: 700;
-            letter-spacing: -1.5vw;
-            text-indent: -1vw;
+            letter-spacing: -0.2vw;
+            line-height: 100vh;
 
-            position: relative;
-            text-decoration: underline;
         }
 
-        .m-content .content1 .number {
-            text-indent: 0.4vw;
+        .m-slider .slider-txt .project-1 {
+            /* position: sticky;
+            top: 0; */
         }
 
-        /* .m-content .content1 .book::after {
-            content: "";
-            display: block;
-            width: 102%;
-            height: 3vw;
-            background-color: #000;
+        .m-slider .slider-txt .project-2 {}
+
+        .m-slider .slider-txt .project-3 {
+            /* position: sticky;
+            top: 0; */
+        }
+
+        .m-slider .slider-txt .project-4 {
+            /* position: sticky;
+            top: 0; */
+        }
+
+        /* 이미지 */
+        .m-slider .inner-box {
+            width: 100%;
+            height: 400vh;
 
             position: absolute;
-            left: 1vw;
-            bottom: 1.5vw;
+            top: 0;
+            z-index: 99;
         }
 
-        .m-content .content1 .number::after {
-            content: "";
-            display: block;
-            width: 40%;
-            height: 3vw;
-            background-color: #000;
+        .m-slider .inner-box .slider {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
 
-            position: absolute;
-            right: 7.4vw;
-            bottom: 1.5vw;
-        } */
+        }
+
+        .m-slider .inner-box .slider img {
+            object-position: 50%;
+        }
     </style>
 
+    <!-- js -->
     <script src="./common/jquery-3.7.0.min.js"></script>
-
-    <!-- 글자이벤트 js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
-    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/split-type"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
-    <section class="m-content">
-
-        <div class="content1 flex link">
-            <h2 class="book split-lines split-area">Books</h2>
-            <h2 class="number split-lines split-area">(8)</h2>
+    <section class="m-slider cursor-change">
+        <div class="sticky-box">
+            <div class="slider-txt">
+                <h2 class="project-1">Selected Work</h2>
+                <h2 class="project-2">Portraiture</h2>
+                <h2 class="project-3">Stories</h2>
+                <h2 class="project-4">Article</h2>
+            </div>
         </div>
+        <ul class="inner-box">
+            <li class="slider slider1"><img src="./images/bg-img1.png" alt="project-1"></li>
+            <li class="slider slider2"><img src="./images/bg-img2.png" alt="project-1"></li>
+            <li class="slider slider3"><img src="./images/bg-img3.png" alt="project-1"></li>
+            <li class="slider slider4"><img src="./images/bg-img4.png" alt="project-1"></li>
+        </ul>
+
     </section>
-    <!-- ... (Your existing HTML code) ... -->
 
     <script>
-        // DOMContentLoaded 이벤트로 스크립트 실행
-        document.addEventListener("DOMContentLoaded", function () {
-            let typeSplit;
 
-            function runSplit() {
-                typeSplit = new SplitType(".split-lines", {
-                    types: "lines",
-                    tagName: "span",
-                });
-                $(".split-lines .line").wrap("<span class='line-mask'></span>");
-                $(".split-lines").css("opacity", "1");
-            }
-
-            // Function to update ::after styles for .book and .number
-            function updateAfterStyles() {
-                const bookAfter = document.querySelector('.content1 .book::after');
-                const numberAfter = document.querySelector('.content1 .number::after');
-
-                // Customize the ::after styles here
-                bookAfter.style.backgroundColor = '#FF0000'; // Change the background color to red
-                numberAfter.style.backgroundColor = '#00FF00'; // Change the background color to green
-                numberAfter.style.width = '50%'; // Change the width of the .number::after element to 50%
-            }
-
-            // Update on window resize
-            let windowWidth = $(window).innerWidth();
-            window.addEventListener("resize", function () {
-                if (windowWidth !== $(window).innerWidth()) {
-                    windowWidth = $(window).innerWidth();
-                    typeSplit.revert();
-                    runSplit();
-                }
-            });
-
-            runSplit();
-
-            let tl = gsap.timeline({
-                defaults: { ease: "power3.easeOut", duration: 0.7 },
-            });
-
-            tl.from(
-                " .split-lines .line",
-                0.5,
-                {
-                    yPercent: 100,
-                    rotation: 7,
-                    stagger: 0.1,
-                },
-                0.5
-            );
-
-            // ScrollTrigger를 사용하여 클래스명 '.split-area'에 도착했을 때 애니메이션 효과 추가
-            gsap.registerPlugin(ScrollTrigger);
-
-            ScrollTrigger.create({
-                trigger: ".split-area", // 애니메이션을 실행할 요소 선택
-                start: "top 90%", // 요소가 뷰포트의 50vh 지점에 도달하면 애니메이션 실행
-                onEnter: () => {
-                    tl.restart(); // 애니메이션 재생
-                    updateAfterStyles(); // Update ::after styles when animation occurs
-                },
-                once: true, // 애니메이션은 한 번만 실행
-            });
-
-            let tlFt2 = gsap.timeline({
-                defaults: { ease: "power3.easeOut", duration: 0.7 },
-            });
-
-            tlFt2.from(".ft-wrapper3 .line", 0.5, {
-                yPercent: 100,
-                rotation: 7,
-                stagger: 0.1,
-            });
-
-            ScrollTrigger.create({
-                trigger: ".ft-wrapper3", // 애니메이션을 실행할 요소 선택
-                start: "top 90%", // 요소가 뷰포트의 50vh 지점에 도달하면 애니메이션 실행
-                onEnter: () => {
-                    tlFt2.restart(); // 애니메이션 재생
-                },
-                once: true, // 애니메이션은 한 번만 실행
-            });
-        });
     </script>
-
-
 </body>
 
 </html>
