@@ -12,26 +12,24 @@
     <!-- pc 우선 css-->
     <link rel="stylesheet" href="./style.css">
     <style>
-        /*  -- 작품 슬라이드 m-slider -- */
+        body {
+            margin: 0;
+        }
 
         .m-slider {
             width: 100%;
             margin-top: 15vw;
-            /* height: 100vh; */
-            /* overflow: hidden; */
-            position: relative;
-            left: 0;
-            perspective: 100vh;
-            transition: top 0.5s;
         }
 
         .m-slider .slider {
             width: 100%;
             height: 100vh;
-            position: absolute;
+            position: sticky;
             top: 0;
-
-
+            background-position: center 0;
+            background-size: cover;
+            transform: translate3d(0px, 0vh, 0px);
+            transition: transform 0.5s;
         }
 
         .m-slider .slider h2 {
@@ -40,7 +38,6 @@
             font-size: var(--font-vw-5);
             font-weight: 700;
             letter-spacing: -0.2vw;
-
             position: absolute;
             top: 50%;
             left: 50%;
@@ -52,52 +49,40 @@
         }
 
         .m-slider .slider2 {
-            background-image: url(./images/bg-img2.png) no-repeat 50% 40% / cover;
-            position: relative;
-            transform-style: preserve-3d;
-            transform: scale3d(1, 0, 1);
-            transition: transform 0.5s;
+            background: url(./images/bg-img2.png) no-repeat 50% / cover;
         }
 
-        .show-slider2 .slider1 {
-            transform: scale3d(1, 1, 1);
+        .m-slider .slider3 {
+            background: url(./images/bg-img3.png) no-repeat 50% / cover;
+        }
+
+        .m-slider .slider4 {
+            background: url(./images/bg-img4.png) no-repeat 50% 40% / cover;
         }
     </style>
 
     <script src="../common/jquery-3.7.0.min.js"></script>
+
 </head>
 
 <body>
-    <section class="m-slider cursor-change" id="slider-container">
+    <section class="m-slider cursor-change">
         <div class="slider slider1">
             <h2>Selected Work</h2>
         </div>
-        <div class="slider slider2">
+        <div class="slider slider2 slider5">
             <h2>Portraiture</h2>
+        </div>
+        <div class="slider slider3 slider5">
+            <h2>Stories</h2>
+        </div>
+        <div class="slider slider4 slider5">
+            <h2>Article</h2>
         </div>
     </section>
 
     <script>
-        const sliderContainer = document.getElementById('slider-container');
-        const slider1 = document.querySelector('.slider1');
-        const slider2 = document.querySelector('.slider2');
-        const sliderHeight = sliderContainer.clientHeight;
-        const scrollStep = sliderHeight / 3;
-        let scrollCount = 0;
 
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-
-            if (scrollCount < 3) {
-                const translateY = (scrollY / sliderHeight) * scrollStep;
-                slider2.style.transform = `scale3d(1, ${1 + translateY}, 1) translateY(-${translateY * sliderHeight}px)`;
-                scrollCount++;
-            }
-
-            if (scrollY >= sliderHeight && !sliderContainer.classList.contains('show-slider2')) {
-                sliderContainer.classList.add('show-slider2');
-            }
-        });
     </script>
 </body>
 
