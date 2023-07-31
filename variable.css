@@ -2,15 +2,16 @@
 
 /* 변수선언 */
 :root {
-  --font-family-en: "Montserrat", Arial, Helvetica, sans-serif;
-  --font-family-ko: "Noto Sans KR", -apple-system, BlinkMacSystemFont,
-    "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+  --font-family-en: 'Montserrat', Arial, Helvetica, sans-serif;
+  --font-family-ko: 'Noto Sans KR', -apple-system, BlinkMacSystemFont,
+    'Malgun Gothic', '맑은 고딕', helvetica, 'Apple SD Gothic Neo', sans-serif;
 
   --color-black: #1e1e1e;
   --color-white: #d9d9d9;
   --color-gray: #616161;
 
   --font-size-10: 1rem;
+  --font-size-12: 1.2rem;
   --font-size-13: 1.3rem;
   --font-vw-3: 3vw;
   --font-vw-4: 4vw;

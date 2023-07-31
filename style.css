@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* font-family: 'Montserrat', 'Noto Sans KR', sans-serif; */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&family=Noto+Sans+KR:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&family=Noto+Sans+KR:wght@400;700&display=swap');
 
 /* 변수선언 */
 @import url(./variable.css);
@@ -41,6 +41,7 @@ body {
 
 .sub-nav {
   font-weight: 500;
+  font-size: var(--font-size-12);
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -54,6 +55,28 @@ body {
 
 .sub-nav li:nth-child(3) {
   justify-self: end;
+}
+
+/* @media screen and (max-width : 1400px) */
+@media screen and (width < 1400px) {
+  /* 서브네브 */
+  .sub-nav {
+    font-weight: 500;
+    font-size: var(--font-size-10);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 1.2vw;
+  }
+
+  .sub-nav li:nth-child(2) {
+    justify-self: center;
+  }
+
+  .sub-nav li:nth-child(3) {
+    justify-self: end;
+  }
 }
 
 /* --------------마우스커서-------------- */
@@ -231,7 +254,7 @@ body {
 }
 
 .m-keyword .key-wrapper1 .txt1::after {
-  content: "";
+  content: '';
   display: block;
   width: 58%;
   height: 0.7vw;
@@ -248,7 +271,7 @@ body {
 }
 
 .m-keyword .key-wrapper1 .txt2::after {
-  content: "";
+  content: '';
   display: block;
   width: 93.5%;
   height: 0.7vw;
@@ -265,7 +288,7 @@ body {
 }
 
 .m-keyword .key-wrapper1 .txt3::after {
-  content: "";
+  content: '';
   display: block;
   width: 48%;
   height: 0.7vw;
@@ -397,7 +420,7 @@ body {
 }
 
 .m-content .content1 .book::after {
-  content: "";
+  content: '';
   display: block;
   width: 102%;
   height: 3vw;
@@ -409,7 +432,7 @@ body {
 }
 
 .m-content .content1 .number::after {
-  content: "";
+  content: '';
   display: block;
   width: 40%;
   height: 3vw;
@@ -526,6 +549,10 @@ body {
   margin-top: 5vw;
 }
 
+.m-content .content2 .txtBox .title-mini p:nth-child(2) {
+  margin-top: 1vw;
+}
+
 /* content3 비디오 영역 */
 
 .m-content .content3 {
@@ -535,9 +562,9 @@ body {
 
 .m-content .content3 .video {
   width: 65%;
-  height: 170vh;
+  height: 160vh;
   margin: 0 auto;
-  border-radius: 500px;
+  border-radius: 600px;
   overflow: hidden;
 
   position: relative;
@@ -557,7 +584,7 @@ body {
 
 .m-content .content3 .video .video-txt {
   width: 100%;
-  height: 85vh;
+  height: 80vh;
 
   position: absolute;
   top: 50%;
@@ -588,6 +615,32 @@ body {
   bottom: 2vw;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* @media screen and (max-width : 1400px) */
+@media screen and (width < 1400px) {
+  /* 하단 비디오영역 */
+  .m-content .content3 .video {
+    width: 65%;
+    height: 170vh;
+    margin: 0 auto;
+    border-radius: 500px;
+    overflow: hidden;
+
+    position: relative;
+  }
+
+  .m-content .content3 .video .video-txt {
+    width: 100%;
+    height: 85vh;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 999;
+  }
 }
 
 /* --------------하단-------------- */
@@ -689,7 +742,7 @@ body {
 }
 
 .footer .contact .under .line1::after {
-  content: "";
+  content: '';
   display: block;
   width: 101%;
   height: 0.3vw;
@@ -701,7 +754,7 @@ body {
 }
 
 .footer .contact .under .line2::after {
-  content: "";
+  content: '';
   display: block;
   width: 77%;
   height: 0.3vw;
@@ -713,7 +766,7 @@ body {
 }
 
 .footer .contact .under .line3::after {
-  content: "";
+  content: '';
   display: block;
   width: 93%;
   height: 0.3vw;
@@ -725,7 +778,7 @@ body {
 }
 
 .footer .contact .under .line4::after {
-  content: "";
+  content: '';
   display: block;
   width: 88%;
   height: 0.3vw;
@@ -737,7 +790,7 @@ body {
 }
 
 .footer .contact .under .line5::after {
-  content: "";
+  content: '';
   display: block;
   width: 72%;
   height: 0.3vw;
