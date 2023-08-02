@@ -40,6 +40,11 @@
     <!-- 북 글자이벤트 js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
 
+    <!-- 슬라이더 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="./common/ScrollTrigger.min.js"></script>
+
     <!-- 내가 작성한 js -->
     <script defer src="./script.js"></script>
 </head>
@@ -91,7 +96,6 @@
             <img class="mini-img3" src="./images/mini-img3.png"
                 alt="팀워커의 작품사진3 나비가 달아다니는 곳에 흰색 드레스를 입고 금발의 웨이브 머리의 소녀가 앉아있다">
 
-            <!-- class="split-lines-k" -->
 
             <div class="txt-boxs">
                 <div class="p1 split-lines-k">
@@ -147,20 +151,20 @@
 
     <!-- 작품 슬라이드 -->
     <section class="m-slider cursor-change">
-        <div class="slider slider1">
-            <h2>Selected Work</h2>
-        </div>
-        <div class="slider slider2 slider5">
-            <h2>Portraiture</h2>
-        </div>
-        <div class="slider slider3 slider5">
-            <h2>Stories</h2>
-        </div>
-        <div class="slider slider4 slider5">
-            <h2>Article</h2>
+
+        <div class="slider-txt">
+            <h2 class="project project-1">Selected Work</h2>
         </div>
 
+        <ul class="inner-box">
+            <li class="slider slider1"><img src="./images/bg-img1.png" alt="project-1"></li>
+            <li class="slider slider2"><img src="./images/bg-img2.png" alt="project-2"></li>
+            <li class="slider slider3"><img src="./images/bg-img3.png" alt="project-3"></li>
+            <li class="slider slider4"><img src="./images/bg-img4.png" alt="project-4"></li>
+        </ul>
+
     </section>
+
 
     <!-- 책, 영상 -->
     <section class="m-content">

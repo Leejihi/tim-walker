@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* font-family: 'Montserrat', 'Noto Sans KR', sans-serif; */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&family=Noto+Sans+KR:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&family=Noto+Sans+KR:wght@400;700&display=swap');
 
 /* 변수선언 */
 @import url(./variable.css);
@@ -269,58 +269,6 @@ body {
   text-decoration: underline;
 }
 
-/* 밑줄 
-.m-keyword .key-wrapper1 .txt1 {
-  position: relative;
-}
-
-.m-keyword .key-wrapper1 .txt1::after {
-  content: "";
-  display: block;
-  width: 58%;
-  height: 0.7vw;
-  background-color: #000;
-
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-51.5%);
-}
-
-.m-keyword .key-wrapper1 .txt2 {
-  position: relative;
-}
-
-.m-keyword .key-wrapper1 .txt2::after {
-  content: "";
-  display: block;
-  width: 93.5%;
-  height: 0.7vw;
-  background-color: #000;
-
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.m-keyword .key-wrapper1 .txt3 {
-  position: relative;
-}
-
-.m-keyword .key-wrapper1 .txt3::after {
-  content: "";
-  display: block;
-  width: 48%;
-  height: 0.7vw;
-  background-color: #000;
-
-  position: absolute;
-  bottom: 0;
-  left: 21.5%;
-}
-*/
-
 /* key-wrapper2 */
 
 .m-keyword .key-wrapper2 {
@@ -375,44 +323,78 @@ body {
 
 .m-slider {
   width: 100%;
-  margin-top: 15vw;
+  height: 400vh;
+  margin-top: 20vw;
+
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+
+  background-color: black;
+
+  position: relative;
 }
 
-.m-slider .slider {
+/* 텍스트 */
+.m-slider .slider-txt {
   width: 100%;
-  height: 100vh;
-
-  position: sticky;
+  height: 400vh;
+  position: absolute;
   top: 0;
 }
 
-.m-slider .slider h2 {
+.m-slider .slider-txt h2 {
+  width: 100%;
+  height: 100vh;
   text-align: center;
   color: #fff;
-  font-size: var(--font-vw-5);
+  font-size: 5vw;
   font-weight: 700;
   letter-spacing: -0.2vw;
+  line-height: 100vh;
+}
 
+.m-slider .slider-txt .project {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* 이미지 */
+.m-slider .inner-box {
+  width: 100%;
+  height: 400vh;
+
+  margin: 0;
+  padding: 0;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  z-index: 99;
 }
 
-.m-slider .slider1 {
-  background: url(./images/bg-img1.png) no-repeat 50% 40% / cover;
+.m-slider .inner-box .slider {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  transform-origin: top center;
 }
 
-.m-slider .slider2 {
-  background: url(./images/bg-img2.png) no-repeat 50% / cover;
+.m-slider .inner-box .slider img {
+  object-position: 50%;
+  vertical-align: top;
+
+  /* 이미지 해상도 문제해결: 뒷면을 숨김으로써 흐림 효과를 제거 */
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-.m-slider .slider3 {
-  background: url(./images/bg-img3.png) no-repeat 50% / cover;
-}
-
-.m-slider .slider4 {
-  background: url(./images/bg-img4.png) no-repeat 50% 40% / cover;
+.m-slider .inner-box .slider2,
+.m-slider .inner-box .slider3,
+.m-slider .inner-box .slider4 {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.6s, opacity 0.6s;
 }
 
 /*  -- 책, 영상 m-content -- */
@@ -440,20 +422,12 @@ body {
   overflow: visible;
 }
 
-/* .book {
-  text-decoration: underline 3.5vw;
-}
-
-.number {
-  text-decoration: underline 3.5vw;
-} */
-
 .m-content .content1 .number {
   text-indent: 0.4vw;
 }
 
 .m-content .content1 .book::after {
-  content: "";
+  content: '';
   display: block;
   width: 102%;
   height: 3vw;
@@ -465,7 +439,7 @@ body {
 }
 
 .m-content .content1 .number::after {
-  content: "";
+  content: '';
   display: block;
   width: 40%;
   height: 3vw;
@@ -702,11 +676,11 @@ body {
 
 .footer .f-txtBox .ft-wrapper1 {
   font-size: 15.5vw;
-  letter-spacing: -1vw;
+  letter-spacing: -1.5vw;
 }
 
 .footer .f-txtBox .ft-wrapper1 p {
-  margin-top: -4.2vw;
+  margin-top: -8vw;
 }
 
 .footer .f-txtBox .ft-wrapper1 .italic {
@@ -745,7 +719,7 @@ body {
 
 .footer .f-txtBox .ft-wrapper3 {
   position: absolute;
-  bottom: 21vw;
+  bottom: 28vw;
   right: 22.5vw;
 
   transition: 0.3s;
@@ -780,7 +754,7 @@ body {
 }
 
 .footer .contact .under .line1::after {
-  content: "";
+  content: '';
   display: block;
   width: 101%;
   height: 0.3vw;
@@ -792,7 +766,7 @@ body {
 }
 
 .footer .contact .under .line2::after {
-  content: "";
+  content: '';
   display: block;
   width: 77%;
   height: 0.3vw;
@@ -804,7 +778,7 @@ body {
 }
 
 .footer .contact .under .line3::after {
-  content: "";
+  content: '';
   display: block;
   width: 93%;
   height: 0.3vw;
@@ -816,7 +790,7 @@ body {
 }
 
 .footer .contact .under .line4::after {
-  content: "";
+  content: '';
   display: block;
   width: 88%;
   height: 0.3vw;
@@ -828,7 +802,7 @@ body {
 }
 
 .footer .contact .under .line5::after {
-  content: "";
+  content: '';
   display: block;
   width: 72%;
   height: 0.3vw;
